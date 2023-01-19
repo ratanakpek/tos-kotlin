@@ -1,0 +1,5 @@
+1. More specifically, the singleton pattern allows objects to:
+    -   Ensure they only have one instance
+    -   Provide easy access to that instance
+    -   Control their instantiation (for example, hiding the constructors of a class)
+    -   Thread safe
