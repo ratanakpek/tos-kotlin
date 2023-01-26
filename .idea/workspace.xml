@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/creational/Usage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/ApiProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/creational/FactoryPatternTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/experiment/RetrofitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/experiment/RetrofitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -66,7 +73,7 @@
       <command value="gradle --build-cache" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.SingletonKotlinTest.Lazy initialization test">
+  <component name="RunManager" selected="Gradle.FactoryPatternTest.Create object by method at runtime">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Design_Pattern_in_Kotlin_&amp;_Java.app" />
       <option name="DEPLOY" value="true" />
@@ -143,6 +150,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="FactoryPatternTest.Create object by method at runtime" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.FactoryPatternTest.Create object by method at runtime&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="SingletonKotlinTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -200,6 +228,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FactoryPatternTest.Create object by method at runtime" />
         <item itemvalue="Gradle.SingletonKotlinTest.Lazy initialization test" />
         <item itemvalue="Gradle.SingletonKotlinTest" />
         <item itemvalue="Gradle.C:/Users/DELL/AndroidStudioProjects/Design-Pattern-in-Kotlin-Java" />
