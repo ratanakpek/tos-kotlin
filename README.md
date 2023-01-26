@@ -2,7 +2,7 @@
 
 Project maintained by [@ratanakpek](http://twitter.com/dbacinski) (Ratanak Pek)
 
-Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński)
+Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Phorn Borrom
 
 ## Table of Contents
 
