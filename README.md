@@ -121,7 +121,7 @@ class LazySingleton private constructor() {
 [Factory Method](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
 ------------
 
-Factory Method Pattern: is an interface or abstract class for creating an object but let the subclasses decide which class to instantiate. In other words, subclasses are responsible to create the instance of the class at runtime.
+is an interface or abstract class for creating an object but let the subclasses decide which class to instantiate. In other words, subclasses are responsible to create the instance of the class at runtime.
 
 #### Example:
 
