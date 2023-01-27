@@ -190,3 +190,120 @@ fun generateAppByType(osType: String): MachineDeveloper {
 
     }
 ```
+
+[Abstract Factory](app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/FactoryMethodWithInterface.kt)
+------------
+
+for solves the problem of creating entire product families without specifying their concrete classes. The "family" of objects created by the factory are determined at run-time.
+
+#### Component for create button:
+```kotlin
+   interface Button {
+    fun paint()
+}
+class MacOSButton : Button {
+    override fun paint() {
+        println("Mac os button!")
+    }
+}
+class WindowOSButton : Button {
+    override fun paint() {
+        println("Window os button!")
+    }
+}
+```
+
+#### Component for create checkbox:
+```kotlin
+ interface Checkbox {
+    fun paint()
+}
+class MacOSCheckbox : Checkbox {
+    override fun paint() {
+        println("Mac os checkbox!")
+    }
+}
+class WindowOSCheckbox : Checkbox {
+    override fun paint() {
+        println("Window os checkbox!")
+    }
+}
+```
+
+#### Factory for create specific button & checkbox:
+```kotlin
+interface MainFactory {
+    fun createButton(): Button
+    fun createCheckbox(): Checkbox
+}
+
+class MacButtonFactory : MainFactory {
+    override fun createButton(): Button = MacOSButton()
+    override fun createCheckbox(): Checkbox = MacOSCheckbox()
+}
+
+class WindowButtonFactory : MainFactory {
+    override fun createButton(): Button = WindowOSButton()
+    override fun createCheckbox(): Checkbox = WindowOSCheckbox()
+}
+```
+
+#### Client code or library that provide client to use the component from factory
+```kotlin
+class Flutter(
+    factory: MainFactory,
+    private var checkbox: Checkbox = factory.createCheckbox(),
+    var button: Button = factory.createButton()
+) {
+    fun paint() {
+        checkbox.paint()
+        button.paint()
+    }
+}
+```
+
+#### Usage
+```kotlin
+class AbstractFactoryTest {
+    private fun configFlutterEnv(osType: String): Flutter {
+        return Flutter(
+            when (osType) {
+                "mac" -> {
+                    MacButtonFactory()
+                }
+                "win" -> {
+                    WindowButtonFactory()
+                }
+                else -> {
+                    throw IllegalArgumentException()
+                }
+            }
+        )
+    }
+
+    @Test
+    fun `The factory will provide component like button, checkbox by of their type for Mac OS`() {
+        val flutterApp = configFlutterEnv("mac")
+        println("mac")
+        flutterApp.paint()
+    }
+
+    @Test
+    fun `The factory will provide component like button, checkbox by of their type for Window OS`() {
+        val flutterApp = configFlutterEnv("win")
+        println("window")
+        flutterApp.paint()
+    }
+}
+
+```
+
+#### Output
+```kotlin
+window
+Window os checkbox!
+Window os button!
+mac
+Mac os checkbox!
+Mac os button!
+```
