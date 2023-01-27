@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/creational/Usage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/experiment/RetrofitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/experiment/RetrofitTest.kt" afterDir="false" />
+    <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="Factory Method Pattern">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/FactoryMethodWithInterface.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/ApiProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/FactoryMethodWithoutInterface.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/creational/FactoryPatternTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/creational/FactoryPatternTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -59,14 +66,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\AndroidStudioProjects\Design-Pattern-in-Kotlin-Java\app\src\main\java\com\example\designpatterninkotlinjava\creational\factorymethod" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle --build-cache" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.SingletonKotlinTest.Lazy initialization test">
+  <component name="RunManager" selected="Gradle.FactoryPatternTest">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Design_Pattern_in_Kotlin_&amp;_Java.app" />
       <option name="DEPLOY" value="true" />
@@ -124,21 +137,65 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/DELL/AndroidStudioProjects/Design-Pattern-in-Kotlin-Java" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FactoryPatternTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--build-cache" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.FactoryPatternTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="FactoryPatternTest.Create object by method at runtime with interface" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.FactoryPatternTest.Create object by method at runtime with interface&quot;" />
+        <option name="taskDescriptions">
           <list />
         </option>
-        <option name="vmOptions" value="" />
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="FactoryPatternTest.Create object by method at runtime" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.FactoryPatternTest.Create object by method at runtime&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -200,9 +257,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FactoryPatternTest" />
+        <item itemvalue="Gradle.FactoryPatternTest.Create object by method at runtime with interface" />
+        <item itemvalue="Gradle.FactoryPatternTest.Create object by method at runtime" />
         <item itemvalue="Gradle.SingletonKotlinTest.Lazy initialization test" />
         <item itemvalue="Gradle.SingletonKotlinTest" />
-        <item itemvalue="Gradle.C:/Users/DELL/AndroidStudioProjects/Design-Pattern-in-Kotlin-Java" />
       </list>
     </recent_temporary>
   </component>
@@ -215,6 +274,14 @@
       <option name="presentableId" value="Default" />
       <updated>1674167758464</updated>
     </task>
+    <task id="LOCAL-00001" summary="Factory Method Pattern">
+      <created>1674748173040</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674748173040</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,5 +295,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Factory Method Pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Factory Method Pattern" />
   </component>
 </project>
