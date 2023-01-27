@@ -6,6 +6,12 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
 
 ## Table of Contents
 
+* [Creational Patterns](#creational)
+    * [Builder / Assembler](#builder--assembler)
+    * [Factory Method](#factory-method)
+    * [Singleton](#singleton)
+    * [Abstract Factory](#abstract-factory)
+
 * [Behavioral Patterns](#behavioral)
     * [Observer / Listener](#observer--listener)
     * [Strategy](#strategy)
@@ -15,11 +21,7 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Visitor](#visitor)
     * [Mediator](#mediator)
     * [Memento](#memento)
-* [Creational Patterns](#creational)
-    * [Builder / Assembler](#builder--assembler)
-    * [Factory Method](#factory-method)
-    * [Singleton](#singleton)
-    * [Abstract Factory](#abstract-factory)
+
 * [Structural Patterns](#structural)
     * [Adapter](#adapter)
     * [Decorator](#decorator)
