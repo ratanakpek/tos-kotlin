@@ -63,7 +63,7 @@ class Coin private constructor() {
 }
 ```
 
-#### Example 3: Other way for creaating it
+#### Example 3: Other way for creating it
 ```kotlin
 class LazySingleton private constructor() {
 
