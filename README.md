@@ -198,7 +198,7 @@ for solves the problem of creating entire product families without specifying th
 
 #### Component for create button:
 ```kotlin
-   interface Button {
+interface Button {
     fun paint()
 }
 class MacOSButton : Button {
@@ -215,7 +215,7 @@ class WindowOSButton : Button {
 
 #### Component for create checkbox:
 ```kotlin
- interface Checkbox {
+interface Checkbox {
     fun paint()
 }
 class MacOSCheckbox : Checkbox {
