@@ -30,7 +30,7 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
 Creational Pattern
 ==========
 
-[Singleton](/patterns/src/test/kotlin/Singleton.kt)
+[Singleton](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
 ------------
 
 The singleton pattern ensures that only one object of a particular class is ever created.
@@ -118,3 +118,7 @@ class LazySingleton private constructor() {
     }
 ```
 
+[Factory Method](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
+------------
+
+Factory Method Pattern: is an interface or abstract class for creating an object but let the subclasses decide which class to instantiate. In other words, subclasses are responsible to create the instance of the class at runtime.
