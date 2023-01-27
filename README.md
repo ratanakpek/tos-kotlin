@@ -122,3 +122,69 @@ class LazySingleton private constructor() {
 ------------
 
 Factory Method Pattern: is an interface or abstract class for creating an object but let the subclasses decide which class to instantiate. In other words, subclasses are responsible to create the instance of the class at runtime.
+
+#### Example:
+
+```kotlin
+interface FlutterApp {
+    fun generateAppFile(): String
+}
+class IOS : FlutterApp {
+    override fun generateAppFile(): String = "ipk"
+}
+class AND : FlutterApp {
+    override fun generateAppFile(): String = "apk"
+}
+
+
+/**
+ * Base factory class. Note that "factory" is merely a role for the class. It
+ * should have some core business logic which needs different products to be
+ * created.
+ */
+abstract class MachineDeveloper {
+    fun runTheApp(): Boolean {
+        generateAppNow()
+        // Ran the app already
+        return true
+    }
+    abstract fun generateAppNow(): FlutterApp
+}
+class WindowOS : MachineDeveloper() {
+    override fun generateAppNow(): FlutterApp {
+        return AND()
+    }
+}
+class MacOS : MachineDeveloper() {
+    override fun generateAppNow(): FlutterApp {
+        return IOS()
+    }
+}
+
+/**
+ * Factory Method
+ */
+fun generateAppByType(osType: String): MachineDeveloper {
+    return if (osType == "AND") WindowOS() else MacOS()
+}
+```
+
+#### Usage
+
+```kotlin
+    @Test
+    fun `Create object by method at runtime with interface`() {
+        //Android
+        val runOnType = generateAppByType("AND")
+        //generate app logic
+        runOnType.runTheApp()
+        Assert.assertEquals("apk", runOnType.generateAppNow().generateAppFile())
+        
+        // IOS
+        val runOnTypeIos = generateAppByType("IOS")
+        //generate app logic
+        runOnTypeIos.runTheApp()
+        Assert.assertEquals("ipk", runOnTypeIos.generateAppNow().generateAppFile())
+
+    }
+```
