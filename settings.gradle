@@ -16,3 +16,4 @@ rootProject.name = "Design Pattern in Kotlin & Java"
 include ':app'
 include ':reactive'
 include ':annotation'
+include ':dsl'
