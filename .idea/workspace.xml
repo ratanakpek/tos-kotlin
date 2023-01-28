@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="Abstract Factory">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/abstractfactory/Button.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/abstractfactory/Button.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +54,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="2KZ2PMVfiIt0U1Z0FKVGIJt7CTO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -76,7 +85,7 @@
       <command value="gradle --build-cache" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Window OS">
+  <component name="RunManager" selected="Gradle.AbstractFactoryTest">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Design_Pattern_in_Kotlin_&amp;_Java.app" />
       <option name="DEPLOY" value="true" />
@@ -254,9 +263,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AbstractFactoryTest" />
         <item itemvalue="Gradle.AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Window OS" />
         <item itemvalue="Gradle.AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Mac OS" />
-        <item itemvalue="Gradle.AbstractFactoryTest" />
         <item itemvalue="Gradle.AbstractFactoryTest.helloWorld" />
         <item itemvalue="Gradle.FactoryPatternTest" />
       </list>
