@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="Factory Method Pattern">
-      <change afterPath="$PROJECT_DIR$/reactive/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactive/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactive/consumer-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactive/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactive/src/androidTest/java/xyz/edsync/reactive/ExampleInstrumentedTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactive/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactive/src/test/java/xyz/edsync/reactive/ExampleUnitTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/annotation/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/annotation/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/annotation/consumer-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/annotation/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/annotation/src/androidTest/java/xyz/edsync/annotation/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/annotation/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/annotation/src/test/java/xyz/edsync/annotation/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
