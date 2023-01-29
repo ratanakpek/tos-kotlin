@@ -352,3 +352,7 @@ class SetupComputer private constructor(
 
     }
 ```
+
+Structural Design Patterns -> How you compose objects!
+for simplifying the design of large object structures by identifying relationships between them. They describe common ways of composing classes and objects so that they become repeatable as solutions.
+==========
