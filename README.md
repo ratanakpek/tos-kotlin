@@ -307,3 +307,47 @@ mac
 Mac os checkbox!
 Mac os button!
 ```
+
+[Builder](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
+------------
+
+to provide a flexible solution to various object creation problems in object-oriented programming. The intent of the Builder design pattern is to separate the construction of a complex object from its representation.
+
+#### Example:
+
+```kotlin
+class SetupComputer private constructor(
+    var ram: String?,
+    var cpu: String?,
+    var keyboard: String?
+) {
+    class Builder(
+        var ram: String? = null,
+        var cpu: String? = null,
+        var keyboard: String? = null
+    ) {
+        fun addRam(ram: String) = apply { this.ram = ram }
+        fun addCpu(cpu: String) = apply { this.cpu = cpu }
+        fun addKeyboard(keyboard: String) = apply { this.keyboard = keyboard }
+        fun build() = SetupComputer(ram, cpu, keyboard)
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+    fun `Create builder pattern with kotlin coding style`() {
+        val setupComputer = SetupComputer.Builder()
+            .addRam("Dell Ram")
+            .addCpu("Cpu of Lenovo")
+            .addKeyboard("Magic Keyboard")
+            .build()
+
+        Assert.assertEquals("Dell Ram", setupComputer.ram)//true
+        Assert.assertEquals("Cpu of Lenovo", setupComputer.cpu)//true
+        Assert.assertEquals("Magic Keyboard", setupComputer.keyboard)//true
+
+    }
+```
