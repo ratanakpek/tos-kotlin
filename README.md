@@ -356,3 +356,82 @@ class SetupComputer private constructor(
 Structural Design Patterns -> How you compose objects!
 for simplifying the design of large object structures by identifying relationships between them. They describe common ways of composing classes and objects so that they become repeatable as solutions.
 ==========
+
+[Adapter Pattern](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
+------------
+
+It is a wrapper that allows incompatible objects to collaborate/conntect each other. 
+
+#### Example:
+
+```kotlin
+/**
+ * RoundPegs are compatible with RoundHoles but can not with square peg
+ */
+class RoundHole(var radius: Double) {
+    fun fits(peg: RoundPeg): Boolean {
+        return radius >= peg.radius
+    }
+}
+
+/**
+ * RoundPegs are compatible with RoundHoles.
+ */
+open class RoundPeg {
+    open var radius: Double = 0.0
+}
+
+/**
+ * SquarePegs are not fit with round hole, so we adapter to help on this
+ */
+class SquarePeg(var width: Double) {
+    fun getSquare() = this.width.pow(2.0)
+}
+
+/**
+ * Adapter is a bridge that allow square peg to use fits() funtion of round hole
+ */
+class SquarePegAdapter(squarePeg: SquarePeg) : RoundPeg() {
+    override var radius: Double = (sqrt((squarePeg.getSquare() / 2).pow(2.0) * 2))
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+    fun `Round hole fit with square peg success test`() {
+        //My hole has radius of 10.0
+        val hole = RoundHole(10.0)
+        val roundPeg = RoundPeg()
+        //formula find radius of Round Shape = 10.0
+        roundPeg.radius = 10.0
+        Assert.assertEquals(true, roundPeg.radius == hole.radius)
+        Assert.assertEquals(true, hole.fits(roundPeg))
+    }
+
+    @Test
+    fun `Use adapter for square peg can not fit with round hole failed test`() {
+        //My hole has radius of 10.0
+        val hole = RoundHole(5.0)
+        val squarePeg = SquarePeg(19.0)
+        // if (hold.fits(squarePeg)) { // error bec it is round peg so we need adapter
+        val sqPegAdapter = SquarePegAdapter(squarePeg)
+        println("hole -> ${hole.radius}, square adapter -> ${sqPegAdapter.radius}") //hole -> 5.0, square adapter -> 255.26554800834364
+        Assert.assertEquals(true, hole.radius != sqPegAdapter.radius)
+        Assert.assertEquals(false, hole.fits(sqPegAdapter))
+    }
+
+    @Test
+    fun `Square peg smaller or fit with hole success test`() {
+        val hole = RoundHole(5.0)
+        val squarePeg2 = SquarePeg(2.0)
+        val sqPegAdapter2 = SquarePegAdapter(squarePeg2)
+        println("hole -> ${hole.radius}, square adapter -> ${sqPegAdapter2.radius}") // hole -> 5.0, square adapter -> 2.8284271247461903
+        Assert.assertEquals(true, sqPegAdapter2.radius < hole.radius)
+        Assert.assertEquals(
+            true,
+            hole.fits(sqPegAdapter2)
+        ) //fit bec square peg is smaller than hole
+    }
+```
