@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="Abstract Factory">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/builder/javastyle/BuildComputer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/builder/kotlinstyle/SetupComputer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/creational/BuilderTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/abstractfactory/Button.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/abstractfactory/Button.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
       <command value="gradle --build-cache" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.AbstractFactoryTest">
+  <component name="RunManager" selected="Gradle.BuilderTest">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Design_Pattern_in_Kotlin_&amp;_Java.app" />
       <option name="DEPLOY" value="true" />
@@ -164,27 +166,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Mac OS" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Mac OS&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:testDebugUnitTest" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Window OS" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -206,12 +187,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AbstractFactoryTest.helloWorld" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BuilderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.AbstractFactoryTest.helloWorld&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.BuilderTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -227,12 +208,33 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FactoryPatternTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BuilderTest.Create builder pattern with java coding style" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.FactoryPatternTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.BuilderTest.Create builder pattern with java coding style&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BuilderTest.Create builder pattern with kotlin coding style" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.BuilderTest.Create builder pattern with kotlin coding style&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -263,11 +265,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BuilderTest" />
+        <item itemvalue="Gradle.BuilderTest.Create builder pattern with kotlin coding style" />
+        <item itemvalue="Gradle.BuilderTest.Create builder pattern with java coding style" />
         <item itemvalue="Gradle.AbstractFactoryTest" />
         <item itemvalue="Gradle.AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Window OS" />
-        <item itemvalue="Gradle.AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Mac OS" />
-        <item itemvalue="Gradle.AbstractFactoryTest.helloWorld" />
-        <item itemvalue="Gradle.FactoryPatternTest" />
       </list>
     </recent_temporary>
   </component>
