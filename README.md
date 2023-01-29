@@ -29,7 +29,8 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Protection Proxy](#protection-proxy)
     * [Composite](#composite)
 
-Creational Pattern
+Creational Pattern -> How you create object!
+It provide various object creation mechanisms, which increase flexibility and reuse of existing code.
 ==========
 
 [Singleton](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
