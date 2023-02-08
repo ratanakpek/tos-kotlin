@@ -14,7 +14,7 @@ import org.junit.Test
 class PrototypeTest {
 
     @Test
-    fun `Without use clone when we modify object, it will original test`() {
+    fun `Without use clone when we modify object, it will affect original test`() {
         val oldSamsung = Samsung()
         oldSamsung.apply {
             deviceId = "Samsung111"
@@ -27,7 +27,7 @@ class PrototypeTest {
             name = "haha"
         }
 
-        //Both object had been modified
+        //Both object had been modified and they are same value
         Assert.assertEquals(oldSamsung.deviceId, newSamsung.deviceId) //"123"
         Assert.assertEquals(oldSamsung.name, newSamsung.name) //"haha"
     }
