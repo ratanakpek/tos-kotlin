@@ -4,6 +4,10 @@ import com.example.designpatterninkotlinjava.structural.AdapterSample.AdapterUkC
 import com.example.designpatterninkotlinjava.structural.AdapterSample.CarPriceCalculator
 import com.example.designpatterninkotlinjava.structural.AdapterSample.PriceCalculator
 import com.example.designpatterninkotlinjava.structural.AdapterSample.TruckPriceCalculator
+import com.example.designpatterninkotlinjava.structural.adaptercity.AsianAdapter
+import com.example.designpatterninkotlinjava.structural.adaptercity.AsianCity
+import com.example.designpatterninkotlinjava.structural.adaptercity.NorthAmericanCity
+import com.example.designpatterninkotlinjava.structural.adaptercity.WeatherWarnings
 import org.example.UKCarPriceCalculator
 import org.junit.Assert
 import org.junit.Test
@@ -82,5 +86,25 @@ class AdapterTest {
     private fun printVehiclePrice(calculator: PriceCalculator) {
         val price = calculator.calculatePrice()
         println("The price of vehicle is: $price")
+    }
+
+
+    @Test
+    fun tet() {
+        val weatherWarnings = WeatherWarnings()
+
+        val chicago = NorthAmericanCity("Chicago", 16.0)
+        weatherWarnings.postWarning(chicago)
+
+        val phoenix = NorthAmericanCity("Phoenix", 104.0)
+        weatherWarnings.postWarning(phoenix)
+
+        val portland = NorthAmericanCity("Portland", 70.0)
+        weatherWarnings.postWarning(portland)
+
+        //50 degree is so hot
+        val bangkok = AsianCity("Bangkok", 50.0)
+        val adapter = AsianAdapter(bangkok)
+        weatherWarnings.postWarning(adapter)
     }
 }
