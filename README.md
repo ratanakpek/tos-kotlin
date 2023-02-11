@@ -551,7 +551,8 @@ fun `Square peg smaller or fit with hole success test`() {
 
 [Decorator](app/src/main/java/com/example/designpatterninkotlinjava/structural/decorator/AndroidOSDecorator.kt)
 ------------
-Act as a wrapper to existing or original class and provide additional functionality keeping class methods signature intact.
+Act as a wrapper to existing or original class and provide additional functionality keeping class
+methods signature intact.
 
 #### Example:
 
@@ -612,6 +613,7 @@ fun `Decorator with sample`() {
     customOreo.runOsVersion()
 }
 ```
+
 #### Output
 
 ```kotlin
@@ -620,9 +622,89 @@ Running on OS: Nougat!
 
 Nougat with original from Google with color OS System!
 Running on OS: Nougat!
-This current OS embed with Color OS Security!
+This current OS embed with Color OS Security !
 
 Oreo with original from Google with color OS System!
 Running on OS: Oreo!
-This current OS embed with Color OS Security!
+This current OS embed with Color OS Security !
+```
+
+[Facade](app/src/main/java/com/example/designpatterninkotlinjava/structural/ComputerFacade.kt)
+------------
+It hides the complexities of the system and provides an interface to the client using which the
+client can access the system.
+
+#### Example:
+
+```kotlin
+interface ComputerRunnable {
+    fun run()
+}
+
+class SwitchPower : ComputerRunnable {
+    override fun run() {
+        println("1. Running : SwitchPower")
+    }
+}
+
+class Monitor : ComputerRunnable {
+    override fun run() {
+        println("2. Running : Monitor")
+    }
+}
+
+class Ram : ComputerRunnable {
+    override fun run() {
+        println("3. Running : Ram")
+    }
+}
+
+class CPU : ComputerRunnable {
+    override fun run() {
+        println("4. Running : CPU")
+    }
+}
+
+class ComputerFacade {
+    fun turnComputer() {
+        SwitchPower().run()
+        Monitor().run()
+        Ram().run()
+        CPU().run()
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+ @Test
+fun `In order to allow Computer running, there are many steps and client might start wrong components test`() {
+    CPU().run() //4. Running : CPU  -> client which one start first, it really complex to users
+    SwitchPower().run() //1. Running : SwitchPower
+    Monitor().run() //2. Running : Monitor
+    Ram().run() //3. Running : Ram
+}
+
+@Test
+fun `Client doesn't need to know all components, just call turnOnComputer() method test`() {
+    val computerFacade = ComputerFacade()
+    computerFacade.turnOnComputer()
+}
+```
+
+#### Output
+
+```kotlin
+4.Running : CPU
+1.Running : SwitchPower
+2.Running : Monitor
+3.Running : Ram
+
+//Using facade, clients no need to understand which component to start first
+
+1.Running : SwitchPower
+2.Running : Monitor
+3.Running : Ram
+4.Running : CPU
 ```
