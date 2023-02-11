@@ -612,3 +612,17 @@ fun `Decorator with sample`() {
     customOreo.runOsVersion()
 }
 ```
+#### Output
+
+```kotlin
+Nougat with original from Google
+Running on OS: Nougat!
+
+Nougat with original from Google with color OS System!
+Running on OS: Nougat!
+This current OS embed with Color OS Security!
+
+Oreo with original from Google with color OS System!
+Running on OS: Oreo!
+This current OS embed with Color OS Security!
+```
