@@ -708,3 +708,85 @@ fun `Client doesn't need to know all components, just call turnOnComputer() meth
 3.Running : Ram
 4.Running : CPU
 ```
+
+
+[Composite](app/src/main/java/com/example/designpatterninkotlinjava/structural/EmployeeComposite.kt)
+------------
+is to treat a group of objects or single object in the same way in term of a tree structure to represent part as well as whole hierarchy.
+
+#### Example:
+
+```kotlin
+class Employee(
+    var name: String,
+    var dept: String,
+    var salary: Int
+) {
+    var subordinates = mutableListOf<Employee>()
+
+    //for demo purpose
+    override fun toString(): String {
+        return "Employee :[ Name : $name, dept : $dept, salary :$salary ]"
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+fun `Saving & Investing organization test`() {
+    //management team
+    val ceo = Employee("Ratanak", "CEO", 5000)
+
+    //Android Developer team
+    val headOfAndroid = Employee("Makara", "Head of Android", 2000)
+    ceo.subordinates.apply {
+        add(headOfAndroid)
+    }
+    val andDev1 = Employee("Bora", "Android Developer", 1000)
+    val andDev2 = Employee("Tula", "Android Developer", 1000)
+    val andDev3 = Employee("Kanha", "Android Developer", 1000)
+    headOfAndroid.subordinates.apply {
+        add(andDev1)
+        add(andDev2)
+        add(andDev3)
+    }
+
+    // IOS Developer team
+    val headOfIOS = Employee("Chantha", "Head of IOS", 2000)
+    ceo.subordinates.apply {
+        add(headOfIOS)
+    }
+    val iosDev1 = Employee("Dara", "IOS Developer", 1000)
+    val iosDev2 = Employee("Channa", "IOS Developer", 1000)
+    val iosDev3 = Employee("Kdey", "IOS Developer", 1000)
+    headOfIOS.subordinates.apply {
+        add(iosDev1)
+        add(iosDev2)
+        add(iosDev3)
+    }
+
+    println("$ceo of Saving & Investing Organization")
+    for (head in ceo.subordinates) {
+        println(head)
+        for (employee in head.subordinates) {
+            println(employee)
+        }
+    }
+}
+```
+
+#### Output
+
+```kotlin
+Employee :[ Name : Ratanak, dept : CEO, salary :5000 ] of Saving & Investing Organization
+Employee :[ Name : Makara, dept : Head of Android, salary :2000 ]
+Employee :[ Name : Bora, dept : Android Developer, salary :1000 ]
+Employee :[ Name : Tula, dept : Android Developer, salary :1000 ]
+Employee :[ Name : Kanha, dept : Android Developer, salary :1000 ]
+Employee :[ Name : Chantha, dept : Head of IOS, salary :2000 ]
+Employee :[ Name : Dara, dept : IOS Developer, salary :1000 ]
+Employee :[ Name : Channa, dept : IOS Developer, salary :1000 ]
+Employee :[ Name : Kdey, dept : IOS Developer, salary :1000 ]
+```
