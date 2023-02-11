@@ -1,5 +1,10 @@
 package com.example.designpatterninkotlinjava.structural
 
+import com.example.designpatterninkotlinjava.structural.AdapterSample.AdapterUkCarPriceAdapter
+import com.example.designpatterninkotlinjava.structural.AdapterSample.CarPriceCalculator
+import com.example.designpatterninkotlinjava.structural.AdapterSample.PriceCalculator
+import com.example.designpatterninkotlinjava.structural.AdapterSample.TruckPriceCalculator
+import org.example.UKCarPriceCalculator
 import org.junit.Assert
 import org.junit.Test
 import kotlin.math.pow
@@ -58,5 +63,24 @@ class AdapterTest {
         val squareRadius: Double = sqrt((width / 2.0).pow(2.0) * 2)
         println("hole radius -> $hole, square formula radius -> $squareRadius")
         Assert.assertEquals(true, squareRadius > hole.radius)
+    }
+
+    @Test
+    fun `We can not access to jar file that has class UKPriceCaculator, we need to create adapter test`() {
+        val carPriceCalculator = CarPriceCalculator("Ford", 3)
+        printVehiclePrice(carPriceCalculator)
+        val truckPriceCalculator = TruckPriceCalculator(10, 0)
+        printVehiclePrice(truckPriceCalculator)
+
+        //we call UKCarPriceCalculator from jar file
+        val ukPriceCalculator = UKCarPriceCalculator("Audi", 2)
+        val adapter = AdapterUkCarPriceAdapter(ukPriceCalculator)
+        //UKCarPriceCalculator not support printVehiclePrice() so we use adapter instead
+        printVehiclePrice(adapter)
+    }
+
+    private fun printVehiclePrice(calculator: PriceCalculator) {
+        val price = calculator.calculatePrice()
+        println("The price of vehicle is: $price")
     }
 }
