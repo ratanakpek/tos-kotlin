@@ -11,6 +11,7 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Factory Method](#factory-method)
     * [Singleton](#singleton)
     * [Abstract Factory](#abstract-factory)
+    * [Prototype](#prototype)
 
 * [Behavioral Patterns](#behavioral)
     * [Observer / Listener](#observer--listener)
@@ -457,8 +458,9 @@ fun `Use clone() to copy the original object, and we can modify it as want test`
 ```
 
 Structural Design Patterns -> How you compose objects!
-is a way of how classes and objects are structured together and used together to form larger structures. 
-There are 2 types of structural pattern: 1. Structural Class Pattern (Is-A) 2. Structural Object Pattern (Has-A)
+is a way of how classes and objects are structured together and used together to form larger
+structures. There are 2 types of structural pattern: 1. Structural Class Pattern (Is-A) 2.
+Structural Object Pattern (Has-A)
 
 1. Structural Class Pattern (Is-A)
     - How classes are structured and interact
@@ -466,8 +468,7 @@ There are 2 types of structural pattern: 1. Structural Class Pattern (Is-A) 2. S
     - It uses interface to share functionality
 2. Structural Object Pattern (Has-A)
     - Object composition
-    - Allow objects to change behavior at runtime
-==========
+    - Allow objects to change behavior at runtime ==========
 
 [Adapter Pattern](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
 ------------
@@ -545,5 +546,69 @@ fun `Square peg smaller or fit with hole success test`() {
         true,
         hole.fits(sqPegAdapter2)
     ) //fit bec square peg is smaller than hole
+}
+```
+
+[Decorator](app/src/main/java/com/example/designpatterninkotlinjava/structural/decorator/AndroidOSDecorator.kt)
+------------
+Act as a wrapper to existing or original class and provide additional functionality keeping class methods signature intact.
+
+#### Example:
+
+```kotlin
+interface AndroidOS {
+    fun runOsVersion()
+}
+
+class Nougat : AndroidOS {
+    override fun runOsVersion() {
+        println("Running on OS: Nougat!")
+    }
+}
+
+class Oreo : AndroidOS {
+    override fun runOsVersion() {
+        println("Running on OS: Oreo!")
+    }
+}
+
+abstract class OsDecorator(open var androidOS: AndroidOS) : AndroidOS {
+
+    override fun runOsVersion() {
+        androidOS.runOsVersion()
+    }
+}
+
+//Add Color OS security on china's product like hauwei, oppo
+class AddColorOSToOriginal(override var androidOS: AndroidOS) : OsDecorator(androidOS) {
+
+    override fun runOsVersion() {
+        androidOS.runOsVersion()
+        addColorOSSecuritySystem()
+    }
+
+    fun addColorOSSecuritySystem() {
+        println("This current OS embed with Color OS Security!")
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+ @Test
+fun `Decorator with sample`() {
+    println("Nougat with original from Google")
+    val nougat = Nougat()
+    nougat.runOsVersion()
+
+    val customNougat = AddColorOSToOriginal(Nougat())
+    println("\nNougat with original from Google with color OS System!")
+    customNougat.runOsVersion()
+
+
+    val customOreo = AddColorOSToOriginal(Oreo())
+    println("\nOreo with original from Google with color OS System!")
+    customOreo.runOsVersion()
 }
 ```
