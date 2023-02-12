@@ -709,10 +709,10 @@ fun `Client doesn't need to know all components, just call turnOnComputer() meth
 4.Running : CPU
 ```
 
-
 [Composite](app/src/main/java/com/example/designpatterninkotlinjava/structural/EmployeeComposite.kt)
 ------------
-is to treat a group of objects or single object in the same way in term of a tree structure to represent part as well as whole hierarchy.
+is to treat a group of objects or single object in the same way in term of a tree structure to
+represent part as well as whole hierarchy.
 
 #### Example:
 
@@ -780,13 +780,76 @@ fun `Saving & Investing organization test`() {
 #### Output
 
 ```kotlin
-Employee :[ Name : Ratanak, dept : CEO, salary :5000 ] of Saving & Investing Organization
-Employee :[ Name : Makara, dept : Head of Android, salary :2000 ]
-Employee :[ Name : Bora, dept : Android Developer, salary :1000 ]
-Employee :[ Name : Tula, dept : Android Developer, salary :1000 ]
-Employee :[ Name : Kanha, dept : Android Developer, salary :1000 ]
-Employee :[ Name : Chantha, dept : Head of IOS, salary :2000 ]
-Employee :[ Name : Dara, dept : IOS Developer, salary :1000 ]
-Employee :[ Name : Channa, dept : IOS Developer, salary :1000 ]
-Employee :[ Name : Kdey, dept : IOS Developer, salary :1000 ]
+Employee :[Name : Ratanak, dept : CEO, salary :5000 ] of Saving & Investing Organization
+Employee :[Name : Makara, dept : Head of Android, salary :2000 ]
+Employee :[Name : Bora, dept : Android Developer, salary :1000 ]
+Employee :[Name : Tula, dept : Android Developer, salary :1000 ]
+Employee :[Name : Kanha, dept : Android Developer, salary :1000 ]
+Employee :[Name : Chantha, dept : Head of IOS, salary :2000 ]
+Employee :[Name : Dara, dept : IOS Developer, salary :1000 ]
+Employee :[Name : Channa, dept : IOS Developer, salary :1000 ]
+Employee :[Name : Kdey, dept : IOS Developer, salary :1000 ]
+```
+
+[Protection Proxy](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProtectionProxy.kt)
+------------
+is a class represents functionality of another class by require more information than original
+class. It can be a protection layer to original class or data.
+
+#### Example:
+
+```kotlin
+interface ResetPersonalPhone {
+    fun reset(password: String)
+}
+
+class RealOwner : ResetPersonalPhone {
+    override fun reset(password: String) {
+        println("Input this : $password to reset the phone!")
+    }
+}
+
+fun secureLoginWithPassword(password: String): Boolean {
+    //we are preventing password with easy access, you can apply another require info
+    //can apply more validation like, notEmpty, length over 9, has letter, number, sign
+    return if (password.isNotEmpty() && password.length > 9) {
+        RealOwner().reset(password)
+        println("Your phone has been reset successfully!")
+        true
+    } else {
+        println("Your info is invalid, please try again!")
+        false
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+fun `Provide more complex validation for login into the system test`() {
+    println("Invalid Password!")
+    Assert.assertEquals(false, secureLoginWithPassword(""))
+    Assert.assertEquals(false, secureLoginWithPassword("hello"))
+    println()
+    println("Valid Password with proxy requirement!")
+    Assert.assertEquals(true, secureLoginWithPassword("helloWorld"))
+    println()
+    Assert.assertEquals(true, secureLoginWithPassword("hello12345"))
+}
+```
+
+#### Output
+
+```kotlin
+Invalid Password !
+Your info is invalid, please try again!
+Your info is invalid, please try again!
+
+Valid Password with proxy requirement!
+Input this : helloWorld to reset the phone!
+Your phone has been reset successfully !
+
+Input this : hello12345 to reset the phone!
+Your phone has been reset successfully !
 ```
