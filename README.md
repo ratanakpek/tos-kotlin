@@ -853,3 +853,79 @@ Your phone has been reset successfully !
 Input this : hello12345 to reset the phone!
 Your phone has been reset successfully !
 ```
+
+Behavioral design patterns ->  are concerned with algorithms and the assignment of responsibilities between objects.
+
+[Command](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt)
+------------
+is wrapped under an object as command and passed to invoker object. 
+Invoker object looks for the appropriate object which can handle this command and passes the command to the corresponding object which executes the command.
+
+#### Example:
+
+```kotlin
+interface MovieTicketOrder {
+    fun orderNow()
+}
+
+class LegendCinema {
+    fun avengerMovie() {
+        println("Movie : Avenger Ticket has been ordered!")
+    }
+
+    fun hunterGhost() {
+        println("Movie : HunterGhost Ticket has been ordered!")
+    }
+}
+
+class WatchAvengerCommand(var cinema: LegendCinema) : MovieTicketOrder {
+    override fun orderNow() {
+        cinema.avengerMovie()
+    }
+}
+
+class WatchHunterGhostCommand(var cinema: LegendCinema) : MovieTicketOrder {
+    override fun orderNow() {
+        cinema.hunterGhost()
+    }
+}
+
+class TicketOrderByABA {
+    private var bookTickets = mutableListOf<MovieTicketOrder>()
+
+    fun bookAndPaid(orderTicket: MovieTicketOrder) {
+        bookTickets.add(orderTicket)
+    }
+
+    fun buyTicketForClient() {
+        //send order info to merchant
+        bookTickets.forEach { it.orderNow() }
+
+        //clear orders
+        bookTickets.clear()
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+ @Test
+fun `Command pattern success test`() {
+    val movies = LegendCinema()
+    val orderAvengerTicket = WatchAvengerCommand(movies)
+    val orderHunterGhostTicket = WatchHunterGhostCommand(movies)
+
+    val ticketByABA = TicketOrderByABA()
+    ticketByABA.bookAndPaid(orderAvengerTicket)
+    ticketByABA.bookAndPaid(orderHunterGhostTicket)
+    ticketByABA.buyTicketForClient()
+}
+```
+
+#### Output
+
+```kotlin
+Movie : Avenger Ticket has been ordered!
+Movie : HunterGhost Ticket has been ordered!
+```

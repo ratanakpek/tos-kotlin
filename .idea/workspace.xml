@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="Abstract Factory">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/builder/javastyle/BuildComputer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/builder/kotlinstyle/SetupComputer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/creational/BuilderTest.kt" afterDir="false" />
+    <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="Command Pattern">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Interface" />
+        <option value="Class" />
+        <option value="Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -74,12 +74,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/behavioral" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\AndroidStudioProjects\Design-Pattern-in-Kotlin-Java\app\src\main\java\com\example\designpatterninkotlinjava\behavioral" />
+      <recent name="C:\Users\DELL\AndroidStudioProjects\Design-Pattern-in-Kotlin-Java\app\src\main\java\com\example\designpatterninkotlinjava\structural" />
       <recent name="C:\Users\DELL\AndroidStudioProjects\Design-Pattern-in-Kotlin-Java\app\src\main\java\com\example\designpatterninkotlinjava\creational\factorymethod" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.example.designpatterninkotlinjava.structural" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -87,7 +92,7 @@
       <command value="gradle --build-cache" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.BuilderTest">
+  <component name="RunManager" selected="Gradle.CommandTest.Command pattern success test">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Design_Pattern_in_Kotlin_&amp;_Java.app" />
       <option name="DEPLOY" value="true" />
@@ -145,12 +150,25 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AbstractFactoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BridgePattern" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.designpatterninkotlinjava.structural.BridgePattern" />
+      <module name="Design_Pattern_in_Kotlin_&amp;_Java.app.unitTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.designpatterninkotlinjava.structural.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandTest.Command pattern success test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.AbstractFactoryTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.behavior.CommandTest.Command pattern success test&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -166,12 +184,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Window OS" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CommandTest.Command pattern test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Window OS&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.behavior.CommandTest.Command pattern test&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -187,12 +205,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BuilderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CompositeTest.Saving &amp; Investing organization test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.BuilderTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.structural.CompositeTest.Saving &amp; Investing organization test&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -208,33 +226,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BuilderTest.Create builder pattern with java coding style" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProtectionProxyTest.Provide more complex validation for login into the system test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.BuilderTest.Create builder pattern with java coding style&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:testDebugUnitTest" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="BuilderTest.Create builder pattern with kotlin coding style" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.creational.BuilderTest.Create builder pattern with kotlin coding style&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.structural.ProtectionProxyTest.Provide more complex validation for login into the system test&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -265,11 +262,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BuilderTest" />
-        <item itemvalue="Gradle.BuilderTest.Create builder pattern with kotlin coding style" />
-        <item itemvalue="Gradle.BuilderTest.Create builder pattern with java coding style" />
-        <item itemvalue="Gradle.AbstractFactoryTest" />
-        <item itemvalue="Gradle.AbstractFactoryTest.The factory will provide component like button, checkbox by of their type for Window OS" />
+        <item itemvalue="Gradle.CommandTest.Command pattern success test" />
+        <item itemvalue="Gradle.CommandTest.Command pattern test" />
+        <item itemvalue="Application.BridgePattern" />
+        <item itemvalue="Gradle.ProtectionProxyTest.Provide more complex validation for login into the system test" />
+        <item itemvalue="Gradle.CompositeTest.Saving &amp; Investing organization test" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +293,77 @@
       <option name="project" value="LOCAL" />
       <updated>1674811716249</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Decorator pattern">
+      <created>1676085951760</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676085951760</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update readme">
+      <created>1676086270487</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676086270487</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add Facade Pattern">
+      <created>1676091157634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676091157634</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add Facade Pattern">
+      <created>1676091225505</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676091225505</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Composite Pattern">
+      <created>1676125537335</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676125537335</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Protection Proxy Pattern">
+      <created>1676169412894</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676169412895</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Bridge Pattern (Draft)">
+      <created>1676331304761</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676331304761</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Bridge Pattern (Draft)">
+      <created>1676334394410</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676334394410</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Bridge Pattern (Draft)">
+      <created>1676771375886</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676771375886</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Command Pattern">
+      <created>1676793253045</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676793253045</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -314,7 +381,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Factory Method Pattern" />
     <MESSAGE value="Abstract Factory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abstract Factory" />
+    <MESSAGE value="Add Decorator pattern" />
+    <MESSAGE value="Update readme" />
+    <MESSAGE value="Add Facade Pattern" />
+    <MESSAGE value="Composite Pattern" />
+    <MESSAGE value="Protection Proxy Pattern" />
+    <MESSAGE value="Bridge Pattern (Draft)" />
+    <MESSAGE value="Command Pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Command Pattern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -326,6 +400,11 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/structural/CompositeTest.kt</url>
+          <line>41</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
