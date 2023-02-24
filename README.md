@@ -929,3 +929,42 @@ fun `Command pattern success test`() {
 Movie : Avenger Ticket has been ordered!
 Movie : HunterGhost Ticket has been ordered!
 ```
+
+[Observer / Listener](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Observer.kt)
+------------
+The pattern provide a subscription mechanism that notifies multiple objects about any changes that happen to the observed object. Kotlin has built-in like observable, vetoable. 
+If we write this pattern, we will end up a lot of line code, but with the help of Kotlin, it's simple and short.
+
+#### Example:
+
+```kotlin
+class ObservableInKotlin {
+    //Kotlin able to observable another type like boolean, double, float, ...
+    var text: String by Delegates.observable("<Initialize value>") { _, oldValue, newValue ->
+        println("Old= $oldValue, New= $newValue")
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+fun observer_test() {
+    val stringObservable = ObservableInKotlin()
+    with(stringObservable) {
+        //1
+        text = "First Text"
+        //2
+        text = "Second Text"
+    }
+    Assert.assertEquals(true, stringObservable.text == "Second Text")
+}
+```
+
+#### Output
+
+```kotlin
+Old= <Initialize value>, New= First Text 
+Old= First Text, New= Second Text
+```
