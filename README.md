@@ -853,3 +853,118 @@ Your phone has been reset successfully !
 Input this : hello12345 to reset the phone!
 Your phone has been reset successfully !
 ```
+
+Behavioral design patterns ->  are concerned with algorithms and the assignment of responsibilities between objects.
+
+[Command](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt)
+------------
+is wrapped under an object as command and passed to invoker object. 
+Invoker object looks for the appropriate object which can handle this command and passes the command to the corresponding object which executes the command.
+
+#### Example:
+
+```kotlin
+interface MovieTicketOrder {
+    fun orderNow()
+}
+
+class LegendCinema {
+    fun avengerMovie() {
+        println("Movie : Avenger Ticket has been ordered!")
+    }
+
+    fun hunterGhost() {
+        println("Movie : HunterGhost Ticket has been ordered!")
+    }
+}
+
+class WatchAvengerCommand(var cinema: LegendCinema) : MovieTicketOrder {
+    override fun orderNow() {
+        cinema.avengerMovie()
+    }
+}
+
+class WatchHunterGhostCommand(var cinema: LegendCinema) : MovieTicketOrder {
+    override fun orderNow() {
+        cinema.hunterGhost()
+    }
+}
+
+class TicketOrderByABA {
+    private var bookTickets = mutableListOf<MovieTicketOrder>()
+
+    fun bookAndPaid(orderTicket: MovieTicketOrder) {
+        bookTickets.add(orderTicket)
+    }
+
+    fun buyTicketForClient() {
+        //send order info to merchant
+        bookTickets.forEach { it.orderNow() }
+
+        //clear orders
+        bookTickets.clear()
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+ @Test
+fun `Command pattern success test`() {
+    val movies = LegendCinema()
+    val orderAvengerTicket = WatchAvengerCommand(movies)
+    val orderHunterGhostTicket = WatchHunterGhostCommand(movies)
+
+    val ticketByABA = TicketOrderByABA()
+    ticketByABA.bookAndPaid(orderAvengerTicket)
+    ticketByABA.bookAndPaid(orderHunterGhostTicket)
+    ticketByABA.buyTicketForClient()
+}
+```
+
+#### Output
+
+```kotlin
+Movie : Avenger Ticket has been ordered!
+Movie : HunterGhost Ticket has been ordered!
+```
+
+[Observer / Listener](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Observer.kt)
+------------
+The pattern provide a subscription mechanism that notifies multiple objects about any changes that happen to the observed object. Kotlin has built-in like observable, vetoable. 
+If we write this pattern, we will end up a lot of line code, but with the help of Kotlin, it's simple and short.
+
+#### Example:
+
+```kotlin
+class ObservableInKotlin {
+    //Kotlin able to observable another type like boolean, double, float, ...
+    var text: String by Delegates.observable("<Initialize value>") { _, oldValue, newValue ->
+        println("Old= $oldValue, New= $newValue")
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+fun observer_test() {
+    val stringObservable = ObservableInKotlin()
+    with(stringObservable) {
+        //1
+        text = "First Text"
+        //2
+        text = "Second Text"
+    }
+    Assert.assertEquals(true, stringObservable.text == "Second Text")
+}
+```
+
+#### Output
+
+```kotlin
+Old= <Initialize value>, New= First Text 
+Old= First Text, New= Second Text
+```
