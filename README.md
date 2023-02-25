@@ -968,3 +968,90 @@ fun observer_test() {
 Old= <Initialize value>, New= First Text 
 Old= First Text, New= Second Text
 ```
+
+[State](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/kotlin/ActivityLifeCycle.kt)
+------------
+It can create objects which represent various states and a context object whose behavior varies as its state object changes.
+
+
+#### Example:
+
+```kotlin
+sealed class ActivityLifeCycle {
+    object OnCreate : ActivityLifeCycle()
+
+    object OnResume : ActivityLifeCycle()
+
+    object OnDestroy : ActivityLifeCycle()
+}
+
+class MainActivity(private var state: ActivityLifeCycle = ActivityLifeCycle.OnCreate) {
+
+    val isOnResume: Boolean
+        get() = when (state) {
+            is ActivityLifeCycle.OnResume -> true
+            else -> false
+        }
+
+    fun onCreate() {
+        state = ActivityLifeCycle.OnCreate
+    }
+
+    fun onResume() {
+        state = ActivityLifeCycle.OnResume
+    }
+
+    fun onDestroy() {
+        state = ActivityLifeCycle.OnDestroy
+    }
+
+    override fun toString() = "State : ${
+        when (state) {
+            is ActivityLifeCycle.OnCreate -> "Create"
+            is ActivityLifeCycle.OnResume -> "Resume"
+            is ActivityLifeCycle.OnDestroy -> "Destory"
+        }
+    }"
+
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+fun state_pattern_test() {
+    MainActivity().apply {
+        //Create
+        onCreate()
+        println(this)
+        println("resume: $isOnResume")
+        println()//line break
+
+        //Resume
+        onResume()
+        println(this)
+        println("resume: $isOnResume")
+        println()//line break
+
+        //Destroy
+        onDestroy()
+        println(this)
+        println("resume: $isOnResume")
+        println()//line break
+    }
+}
+```
+
+#### Output
+
+```kotlin
+State : Create
+resume: false
+
+State : Resume
+resume: true
+
+State : Destory
+resume: false
+```
