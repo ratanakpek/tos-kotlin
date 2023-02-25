@@ -1055,3 +1055,53 @@ resume: true
 State : Destory
 resume: false
 ```
+
+[Mediator](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/mediator/Mediator.kt)
+------------
+It helps us to design the system in such a way that components are loosely coupled and reusable.
+
+#### Example:
+
+```kotlin
+class PowerButton {
+    fun powerOn() {
+        println("Power on")
+    }
+}
+
+class MonitorDisplay {
+    fun monitorDisplay() {
+        println("Display monitor")
+    }
+}
+
+class MediatorPhone(
+    var powerButton: PowerButton,
+    var monitorShower: MonitorDisplay
+) {
+    fun powerOnPhone() {
+        powerButton.powerOn()
+        monitorShower.monitorDisplay()
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+@Test
+fun `If we don't use MediatorPhone class, the Phone & monitor will couple to each other`() {
+    MediatorPhone(
+        PowerButton(),
+        MonitorDisplay()
+    ).powerOnPhone()
+}
+```
+
+#### Output
+
+```kotlin
+Power on
+Display monitor
+```
