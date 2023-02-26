@@ -1105,3 +1105,64 @@ fun `If we don't use MediatorPhone class, the Phone & monitor will couple to eac
 Power on
 Display monitor
 ```
+
+[Memento pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
+------------
+is used to restore state of an object to a previous state.
+
+#### Example
+
+```kotlin
+data class Memento(val state: String)
+
+class Originator(var state: String) {
+    fun createMemento() = Memento(state)
+    fun restore(memento: Memento) {
+        state = memento.state
+    }
+}
+
+class TextEditor {
+    private val mementoList = mutableListOf<Memento>()
+    fun saveState(state: Memento) {
+        mementoList.add(state)
+    }
+
+    fun restore(index: Int) = mementoList[index]
+}
+```
+
+#### Usage
+
+```kotlin
+ @Test
+fun memento() {
+    val originator = Originator("initial state")
+    val textEditor = TextEditor()
+    textEditor.saveState(originator.createMemento())
+
+    originator.state = "State #1"
+    originator.state = "State #2"
+    textEditor.saveState(originator.createMemento())
+
+    originator.state = "State #3"
+    println("Current State: " + originator.state)
+    Assert.assertEquals(true, originator.state == "State #3")
+
+    originator.restore(textEditor.restore(1))
+    println("Second saved state: " + originator.state)
+    Assert.assertEquals(true, originator.state == "State #2")
+
+    originator.restore(textEditor.restore(0))
+    println("First saved state: " + originator.state)
+    Assert.assertEquals(true, originator.state == "initial state")
+}
+```
+
+#### Output
+
+```kotlin
+Current State: State #3
+Second saved state: State #2
+First saved state: initial state
+```
