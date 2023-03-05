@@ -1166,3 +1166,84 @@ Current State: State #3
 Second saved state: State #2
 First saved state: initial state
 ```
+
+[Visitor](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/visitor.kt)
+------------
+when we need to add similar extraneous functionality to many different classes. 
+
+#### Example:
+
+```kotlin
+interface FetchData {
+    fun accept(computerPartVisitor: FetchDataPartVisitor)
+}
+
+interface FetchDataPartVisitor {
+    fun visit(sql: Sql)
+    fun visit(json: Json)
+    fun visit(text: TextFile)
+}
+
+class Json : FetchData {
+    override fun accept(fetchDataPartVisitor: FetchDataPartVisitor) {
+        fetchDataPartVisitor.visit(this)
+    }
+}
+
+class TextFile : FetchData {
+    override fun accept(fetchDataPartVisitor: FetchDataPartVisitor) {
+        fetchDataPartVisitor.visit(this)
+    }
+}
+
+class Sql : FetchData {
+    override fun accept(computerPartVisitor: FetchDataPartVisitor) {
+        computerPartVisitor.visit(this)
+    }
+}
+
+class FetchDataPartDisplayVisitor : FetchDataPartVisitor {
+    override fun visit(sql: Sql) {
+        println("Store data with SQL, as existing in our project!")
+    }
+
+    override fun visit(json: Json) {
+        println("Store data as json!")
+    }
+
+    override fun visit(text: TextFile) {
+        println("Store data in text file!")
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+fun visitor_test_demo() {
+    val displayVisitor = FetchDataPartDisplayVisitor()
+    //This is old way to store data in sql
+    Sql().apply {
+        accept(displayVisitor)
+    }
+
+    //new way to store data as json
+    Json().apply {
+        accept(displayVisitor)
+    }
+
+    //new way to store data text file instead
+    TextFile().apply {
+        accept(displayVisitor)
+    }
+}
+```
+
+#### Output
+
+```kotlin
+Store data with SQL, as existing in our project!
+Store data as json!
+Store data in text file!
+```
