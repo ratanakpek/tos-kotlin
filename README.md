@@ -5,7 +5,14 @@ Project maintained by [@ratanakpek](http://twitter.com/dbacinski) (Ratanak Pek)
 Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Phorn Borrom
 
 ## Table of Contents
-
+* [Kotlin]
+    * [Delegation]
+      * How to delegate with class in Java
+      * How to delegate responsibility with interface in Java
+      * Delegation property in Kotlin
+      * Custom delegation in Kotlin
+      * How to create delegation with class implementation in Kotlin
+    
 * [Creational Patterns](#creational)
     * [Builder / Assembler](#builder--assembler)
     * [Factory Method](#factory-method)
@@ -29,6 +36,13 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Facade](#facade)
     * [Protection Proxy](#protection-proxy)
     * [Composite](#composite)
+
+* [Kotlin]
+    * Delegation by replacing inheritance: Normally in Java, in order to follow single responsibility, we often use BaseClass to provide 2 classes
+                                            has same responsibility. But in Kotlin, we don't need to create new utility base class, we just create one interface
+                                            and class implementation of that interface and use by keyword "by" delegation and use it in any class.
+
+
 
 Creational Pattern -> How you create object!
 It provide various object creation mechanisms, which increase flexibility and reuse of existing
