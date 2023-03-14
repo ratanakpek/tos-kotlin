@@ -12,6 +12,7 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
       * Delegation property in Kotlin
       * Custom delegation in Kotlin
       * How to create delegation with class implementation in Kotlin
+      * How to create custom delegation property for setter/getter
     
 * [Creational Patterns](#creational)
     * [Builder / Assembler](#builder--assembler)
