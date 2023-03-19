@@ -5,7 +5,15 @@ Project maintained by [@ratanakpek](http://twitter.com/dbacinski) (Ratanak Pek)
 Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Phorn Borrom
 
 ## Table of Contents
-
+* [Kotlin]
+    * [Delegation]
+      * How to delegate with class in Java
+      * How to delegate responsibility with interface in Java
+      * Delegation property in Kotlin
+      * Custom delegation in Kotlin
+      * How to create delegation with class implementation in Kotlin
+      * How to create custom delegation property for setter/getter
+    
 * [Creational Patterns](#creational)
     * [Builder / Assembler](#builder--assembler)
     * [Factory Method](#factory-method)
@@ -29,6 +37,100 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Facade](#facade)
     * [Protection Proxy](#protection-proxy)
     * [Composite](#composite)
+
+============== KOTLIN DELEGATION ===================
+* [Kotlin]
+    * [1. Delegation can replace inheritance] Normally in Java, in order to follow single responsibility, we often use BaseClass to provide 2 classes
+      has same responsibility. But in Kotlin, we don't need to create new utility base class, we just create one interface
+      and class implementation of that interface and use by keyword "by" delegation and use it in any class.
+  
+#### Example : Delegation can replace inheritance
+
+```kotlin
+interface DelegationMsg { // interface one
+    fun sendMsg(msg: String)
+
+    fun deleteMsg()
+
+    class DelegationImpl : DelegationMsg { // implementation of that interface
+        override fun sendMsg(msg: String) {
+            println(msg)
+        }
+
+        override fun deleteMsg() {
+            println("Delete!")
+        }
+    }
+}
+```
+
+* [Kotlin]
+    * [2. Create custom delegation property for setter/getter] : In order to follow the single responsibility principle from SOLID, we can create a class
+to handle the validation for setter/getter of field, 
+  
+* #### Example : Create custom delegation property for setter/getter
+
+```kotlin
+class NameDelegateValidation {
+    var formatValue: String? = null
+
+    //can remove code duplication
+    operator fun setValue(thisRef: Any?, properties: KProperty<*>, value: String?) {
+        if (value != null && value.length >= 3) {
+            formatValue = value.trim().toUpperCase()
+        }
+    }
+
+    //can remove code duplication
+    operator fun getValue(thisRef: Any?, properties: KProperty<*>): String? {
+        return formatValue
+    }
+}
+```
+```kotlin
+var type: String? by NameDelegateValidation()
+```
+
+* [Kotlin]
+    * [3. Delegation property] : There are few delegation properties like observable, vetoable, lazy...
+    
+* #### Example : Observable Delegation -> detect the value changes of the field
+```kotlin
+class ObservableDelegation {
+    var myName: String by Delegates.observable("Kid") { _, old, new ->
+        println("Old=$old, new=$new")
+    }
+}
+```
+```kotlin
+ @Test
+fun `Demo observable function from Kotlin test`() {
+    val observableDelegation = ObservableDelegation()
+    observableDelegation.myName = "Hello World" //Old=Kid, new=Hello World
+
+    observableDelegation.myName = "Saving & Investing" //Old=Hello World, new=Saving & Investing
+}
+```
+
+* #### Example : Lazy Delegation -> help performance when creating the heavy object, and the object created only first time
+```kotlin
+val heavyOperation by lazy {
+        HeavyOperation()
+}
+```
+
+* #### Example : 3. Vetoable Delegation -> It is like observable but the the changes of the field must be fullfill the condition.
+```kotlin
+ var myAge by Delegates.vetoable(18) { _, old, new ->
+    println("Old=$old, new=$new")
+    new >= 18
+}
+```
+============== END KOTLIN DELEGATION ===================
+
+
+
+
 
 Creational Pattern -> How you create object!
 It provide various object creation mechanisms, which increase flexibility and reuse of existing
