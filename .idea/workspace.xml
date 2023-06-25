@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="Command Pattern">
+    <list default="true" id="13fc3f04-c6af-460c-9ed1-7b44e693e4a4" name="Changes" comment="Iterator Design Pattern (Draft)">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/behavioral/iterator/Employee.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/behavioral/iterator/Employee.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,9 +96,9 @@
       <command value="gradle --build-cache" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.CommandTest.Command pattern success test">
+  <component name="RunManager" selected="Gradle.IteratorTest.iterator_test">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="Design_Pattern_in_Kotlin_&amp;_Java.app" />
+      <module name="Design_Pattern_in_Kotlin_&amp;_Java.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -205,12 +209,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CompositeTest.Saving &amp; Investing organization test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="IteratorTest.iterator_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.structural.CompositeTest.Saving &amp; Investing organization test&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.behavior.IteratorTest.iterator_test&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -226,12 +230,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProtectionProxyTest.Provide more complex validation for login into the system test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="VisitorTest.visitor_test_demo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.structural.ProtectionProxyTest.Provide more complex validation for login into the system test&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.designpatterninkotlinjava.behavior.VisitorTest.visitor_test_demo&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -262,11 +266,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.IteratorTest.iterator_test" />
+        <item itemvalue="Gradle.VisitorTest.visitor_test_demo" />
         <item itemvalue="Gradle.CommandTest.Command pattern success test" />
         <item itemvalue="Gradle.CommandTest.Command pattern test" />
         <item itemvalue="Application.BridgePattern" />
-        <item itemvalue="Gradle.ProtectionProxyTest.Provide more complex validation for login into the system test" />
-        <item itemvalue="Gradle.CompositeTest.Saving &amp; Investing organization test" />
       </list>
     </recent_temporary>
   </component>
@@ -405,6 +409,21 @@
           <url>file://$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/structural/CompositeTest.kt</url>
           <line>41</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/behavior/IteratorTest.kt</url>
+          <line>22</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/designpatterninkotlinjava/behavioral/iterator/Employee.kt</url>
+          <line>28</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/test/java/com/example/designpatterninkotlinjava/behavior/IteratorTest.kt</url>
+          <line>23</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

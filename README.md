@@ -22,6 +22,8 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Visitor](#visitor)
     * [Mediator](#mediator)
     * [Memento pattern](#memento)
+    * [Memento](#memento)
+    * [Iterator](#iterator)
 
 * [Structural Patterns](#structural)
     * [Adapter](#adapter)
@@ -1176,6 +1178,12 @@ Current State: State #3
 Second saved state: State #2
 First saved state: initial state
 ```
+
+[Iterator pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
+------------
+Allow us to traverse the collection without worrying the structure of collection (list, stack, tree, etc.)
+
+
 
 [Visitor](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/visitor.kt)
 ------------

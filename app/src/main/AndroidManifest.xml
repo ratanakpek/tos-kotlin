@@ -10,10 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignPatternInKotlinJava">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainComposeActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.DesignPatternInKotlinJava.NoActionBar">
+            android:label="@string/title_activity_main_compose"
+            android:theme="@style/Theme.DesignPatternInKotlinJava">
+
+        </activity>
+
+        <activity
+            android:name=".StyleTextActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main_compose"
+            android:theme="@style/Theme.DesignPatternInKotlinJava">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
