@@ -31,6 +31,7 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Facade](#facade)
     * [Protection Proxy](#protection-proxy)
     * [Composite](#composite)
+    * [Proxy Pattern](#proxy)
 
 ======================================
 
@@ -801,6 +802,56 @@ Employee :[Name : Dara, dept : IOS Developer, salary :1000 ]
 Employee :[Name : Channa, dept : IOS Developer, salary :1000 ]
 Employee :[Name : Kdey, dept : IOS Developer, salary :1000 ]
 ```
+
+[Proxy Pattern](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProxyPattern.kt)
+------------
+It means an object representing another object, and provide the control for accessing the original object.
+Example: when we perform operations like validating the object, hiding the information of original object, on demand loading etc.
+
+#### Example:
+
+```kotlin
+class ProxyImage(var fileName: String) : Image {
+    private var realImage: RealImage? = null
+
+    override fun display() {
+        if (realImage == null) {
+            realImage = RealImage(fileName)
+        }
+        println()
+        println("Cache from proxy")
+        realImage?.display()
+    }
+}
+```
+
+
+#### Usage:
+
+```kotlin
+@Test
+fun `Demo of proxy pattern test`() {
+    val image = ProxyImage("my_vdo.mp4")
+    //image will load from original of the disk
+    image.display()
+
+    //image will load form proxy instead
+    image.display()
+}
+```
+
+#### Output
+
+```kotlin
+Loading my_vdo.mp4 
+        
+Cache from proxy
+Displaying my_vdo.mp4
+
+Cache from proxy
+Displaying my_vdo.mp4
+```
+
 
 [Protection Proxy](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProtectionProxy.kt)
 ------------
