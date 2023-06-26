@@ -32,21 +32,14 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Protection Proxy](#protection-proxy)
     * [Composite](#composite)
     * [Proxy Pattern](#proxy)
+    * [Flyweight Pattern](#flyweight)
 
-======================================
 
-* [Delegation in KOTLIN]
-    1. Delegation can replace inheritance
-    2. Create custom delegation property for setter/getter
-    3. Delegation property: There are few delegation properties like observable, vetoable, lazy...
-  
-    
-
-////////////////  DESIGN PATTERN //////////////////
+//////////////// DESIGN PATTERN //////////////////
 
 Creational Pattern:
-Define how we create object! It provide various object creation mechanisms, which 
-increase flexibility and reuse of existing code.
+Define how we create object! It provide various object creation mechanisms, which increase
+flexibility and reuse of existing code.
 
 [Singleton](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
 ------------
@@ -470,9 +463,9 @@ fun `Use clone() to copy the original object, and we can modify it as want test`
 }
 ```
 
-Structural Design Patterns -> 
-Define how we compose objects, is a way of how classes and objects are structured together and used together to form larger
-structures. There are 2 types of structural pattern:
+Structural Design Patterns ->
+Define how we compose objects, is a way of how classes and objects are structured together and used
+together to form larger structures. There are 2 types of structural pattern:
 
 1. Structural Class Pattern (Is-A)
     - How classes are structured and interact
@@ -805,8 +798,9 @@ Employee :[Name : Kdey, dept : IOS Developer, salary :1000 ]
 
 [Proxy Pattern](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProxyPattern.kt)
 ------------
-It means an object representing another object, and provide the control for accessing the original object.
-Example: when we perform operations like validating the object, hiding the information of original object, on demand loading etc.
+It means an object representing another object, and provide the control for accessing the original
+object. Example: when we perform operations like validating the object, hiding the information of
+original object, on demand loading etc.
 
 #### Example:
 
@@ -825,7 +819,6 @@ class ProxyImage(var fileName: String) : Image {
 }
 ```
 
-
 #### Usage:
 
 ```kotlin
@@ -843,13 +836,63 @@ fun `Demo of proxy pattern test`() {
 #### Output
 
 ```kotlin
-Loading my_vdo.mp4 
-        
-Cache from proxy
-Displaying my_vdo.mp4
+Loading my_vdo . mp4
 
-Cache from proxy
-Displaying my_vdo.mp4
+        Cache from proxy
+Displaying my_vdo . mp4
+
+        Cache from proxy
+Displaying my_vdo . mp4
+```
+
+[Flyweight Pattern](app/src/main/java/com/example/designpatterninkotlinjava/structural/FlyweightPattern.kt)
+------------
+
+- To lower the number of objects generated, decrease the memory footprint, and improve performance.
+- It offers strategies for reducing the number of objects while enhancing the application's object
+  structure.
+- When no existing object of the same kind can be identified, the flyweight pattern seeks to reuse
+  previously created objects of a similar sort by storing them.
+#### Example:
+
+```kotlin
+class ShapeFactory {
+    var circleMap = HashMap<String, Shape>()
+
+    // It will check, is black circle already exist?
+    // If already exist just use it
+    fun getCircle(color: String): Shape {
+        var circle = circleMap[color]
+        return if (circle == null) {
+            circle = Circle(getRandomXY(), getRandomXY(), color)
+            circleMap[color] = circle
+            circle
+        } else circle
+    }
+
+    private fun getRandomXY() = (Math.random() * 100).toInt()
+}
+```
+
+#### Usage:
+
+```kotlin
+ @Test
+fun `flyweight design test`() {
+    val shapeFactory = ShapeFactory()
+    colors.forEach {
+        val circle = shapeFactory.getCircle(it)
+        circle.draw()
+    }
+}
+```
+
+#### Output
+
+```kotlin
+Color: White, X : 20, Y : 73
+Color: Black, X : 38, Y : 52
+Color: Black, X : 38, Y : 52
 ```
 
 
@@ -906,23 +949,24 @@ fun `Provide more complex validation for login into the system test`() {
 ```kotlin
 Invalid Password !
 Your info is invalid, please try again!
-Your info is invalid, please try again!
+    Your info is invalid, please try again!
 
-Valid Password with proxy requirement!
-Input this : helloWorld to reset the phone!
-Your phone has been reset successfully !
+    Valid Password with proxy requirement!
+    Input this : helloWorld to reset the phone!
+    Your phone has been reset successfully !
 
-Input this : hello12345 to reset the phone!
-Your phone has been reset successfully !
+    Input this : hello12345 to reset the phone!
+    Your phone has been reset successfully !
 ```
 
-Behavioral design patterns: 
+Behavioral design patterns:
 are concerned with algorithms and the assignment of responsibilities between objects.
 
 [Command](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt)
 ------------
-is wrapped under an object as command and passed to invoker object.
-Invoker object looks for the appropriate object which can handle this command and passes the command to the corresponding object which executes the command.
+is wrapped under an object as command and passed to invoker object. Invoker object looks for the
+appropriate object which can handle this command and passes the command to the corresponding object
+which executes the command.
 
 #### Example:
 
@@ -995,8 +1039,9 @@ Movie : HunterGhost Ticket has been ordered!
 
 [Observer / Listener](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Observer.kt)
 ------------
-The pattern provide a subscription mechanism that notifies multiple objects about any changes that happen to the observed object. Kotlin has built-in like observable, vetoable.
-If we write this pattern, we will end up a lot of line code, but with the help of Kotlin, it's simple and short.
+The pattern provide a subscription mechanism that notifies multiple objects about any changes that
+happen to the observed object. Kotlin has built-in like observable, vetoable. If we write this
+pattern, we will end up a lot of line code, but with the help of Kotlin, it's simple and short.
 
 #### Example:
 
@@ -1028,14 +1073,14 @@ fun observer_test() {
 #### Output
 
 ```kotlin
-Old= <Initialize value>, New= First Text 
-Old= First Text, New= Second Text
+Old = < Initialize value >, New = First Text
+        Old = First Text, New = Second Text
 ```
 
 [State](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/kotlin/ActivityLifeCycle.kt)
 ------------
-It can create objects which represent various states and a context object whose behavior varies as its state object changes.
-
+It can create objects which represent various states and a context object whose behavior varies as
+its state object changes.
 
 #### Example:
 
@@ -1166,7 +1211,7 @@ fun `If we don't use MediatorPhone class, the Phone & monitor will couple to eac
 
 ```kotlin
 Power on
-Display monitor
+        Display monitor
 ```
 
 [Memento pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
@@ -1225,14 +1270,15 @@ fun memento() {
 #### Output
 
 ```kotlin
-Current State: State #3
+Current State : State #3
 Second saved state: State #2
 First saved state: initial state
 ```
 
 [Iterator pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
 ------------
-Allow us to traverse the collection without worrying the structure of collection (list, stack, tree, etc.)
+Allow us to traverse the collection without worrying the structure of collection (list, stack, tree,
+etc.)
 
 
 
@@ -1312,8 +1358,8 @@ fun visitor_test_demo() {
 #### Output
 
 ```kotlin
-Store data with SQL, as existing in our project!
-Store data as json!
+Store data with SQL, as existing in our project !
+Store data as json !
 Store data in text file!
 ```
 
@@ -1322,9 +1368,10 @@ Store data in text file!
 DELEGATION
 
 1. Delegation can replace inheritance:
-   Normally in Java, in order to follow single responsibility, we often use BaseClass to provide 2 classes
-   has same responsibility. But in Kotlin, we don't need to create new utility base class, we just create one interface
-   and class implementation of that interface and use by keyword "by" delegation and use it in any class.
+   Normally in Java, in order to follow single responsibility, we often use BaseClass to provide 2
+   classes has same responsibility. But in Kotlin, we don't need to create new utility base class,
+   we just create one interface and class implementation of that interface and use by keyword "by"
+   delegation and use it in any class.
 
 #### Example : Delegation can replace inheritance
 
@@ -1346,9 +1393,9 @@ interface DelegationMsg { // interface one
 }
 ```
 
-2. Create custom delegation property for setter/getter : 
-In order to follow the single responsibility principle from SOLID, we can create a class to handle 
-the validation for setter/getter of field,
+2. Create custom delegation property for setter/getter :
+   In order to follow the single responsibility principle from SOLID, we can create a class to
+   handle the validation for setter/getter of field,
 
 * #### Example : Create custom delegation property for setter/getter
 
@@ -1369,6 +1416,7 @@ class NameDelegateValidation {
     }
 }
 ```
+
 ```kotlin
 var type: String? by NameDelegateValidation()
 ```
@@ -1376,6 +1424,7 @@ var type: String? by NameDelegateValidation()
 3. Delegation property: There are few delegation properties like observable, vetoable, lazy...
 
 * #### Example : Observable Delegation -> detect the value changes of the field
+
 ```kotlin
 class ObservableDelegation {
     var myName: String by Delegates.observable("Kid") { _, old, new ->
@@ -1383,6 +1432,7 @@ class ObservableDelegation {
     }
 }
 ```
+
 ```kotlin
  @Test
 fun `Demo observable function from Kotlin test`() {
@@ -1394,13 +1444,15 @@ fun `Demo observable function from Kotlin test`() {
 ```
 
 * #### Example : Lazy Delegation -> help performance when creating the heavy object, and the object created only first time
+
 ```kotlin
 val heavyOperation by lazy {
-        HeavyOperation()
+    HeavyOperation()
 }
 ```
 
 * #### Example : 3. Vetoable Delegation -> It is like observable but the the changes of the field must be fullfill the condition.
+
 ```kotlin
  var myAge by Delegates.vetoable(18) { _, old, new ->
     println("Old=$old, new=$new")
