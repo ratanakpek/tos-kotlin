@@ -15,15 +15,11 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
 
 * [Behavioral Patterns](#behavioral)
     * [Observer / Listener](#observer--listener)
-    * [Strategy](#strategy)
     * [Command](#command)
     * [State](#state)
-    * [Chain of Responsibility](#chain-of-responsibility)
     * [Visitor](#visitor)
     * [Mediator](#mediator)
-    * [Memento pattern](#memento)
     * [Memento](#memento)
-    * [Iterator](#iterator)
 
 * [Structural Patterns](#structural)
     * [Adapter](#adapter)
@@ -31,16 +27,9 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
     * [Facade](#facade)
     * [Protection Proxy](#protection-proxy)
     * [Composite](#composite)
-    * [Proxy Pattern](#proxy)
+    * [Proxy](#proxy)
 
 ======================================
-
-* [Delegation in KOTLIN]
-    1. Delegation can replace inheritance
-    2. Create custom delegation property for setter/getter
-    3. Delegation property: There are few delegation properties like observable, vetoable, lazy...
-  
-    
 
 ////////////////  DESIGN PATTERN //////////////////
 
@@ -803,7 +792,7 @@ Employee :[Name : Channa, dept : IOS Developer, salary :1000 ]
 Employee :[Name : Kdey, dept : IOS Developer, salary :1000 ]
 ```
 
-[Proxy Pattern](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProxyPattern.kt)
+[Proxy](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProxyPattern.kt)
 ------------
 It means an object representing another object, and provide the control for accessing the original object.
 Example: when we perform operations like validating the object, hiding the information of original object, on demand loading etc.
@@ -1169,7 +1158,7 @@ Power on
 Display monitor
 ```
 
-[Memento pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
+[Memento](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
 ------------
 is used to restore state of an object to a previous state.
 
@@ -1229,11 +1218,6 @@ Current State: State #3
 Second saved state: State #2
 First saved state: initial state
 ```
-
-[Iterator pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
-------------
-Allow us to traverse the collection without worrying the structure of collection (list, stack, tree, etc.)
-
 
 
 [Visitor](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/visitor.kt)
