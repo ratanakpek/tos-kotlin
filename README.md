@@ -1426,3 +1426,42 @@ Store data as json !
 Store data in text file!
 ```
 20. [Strategy](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/visitor.kt)
+------------
+is about algorithm can be changed at run time.
+
+#### Example:
+
+```kotlin
+interface Strategy {
+  fun doOperation(num1: Int, num2: Int): Int
+}
+
+class OperationAdd : Strategy {
+  override fun doOperation(num1: Int, num2: Int): Int {
+    return num1 + num2
+  }
+}
+```
+
+#### Usage:
+
+```kotlin
+ @Test
+fun `Creating strategy operation test`() {
+  val contextOperationAdd = Context(OperationAdd())
+  println("5 + 5 = ${contextOperationAdd.executeStrategy(5, 5)}")
+
+  val contextOperationSubtract = Context(OperationSubtract())
+  println("5 - 5 = ${contextOperationSubtract.executeStrategy(5, 5)}")
+
+  val contextOperationMultiply = Context(OperationMultiply())
+  println("5 * 5 = ${contextOperationMultiply.executeStrategy(5, 5)}")
+}
+```
+
+#### Output
+```kotlin
+5 + 5 = 10
+5 - 5 = 0
+5 * 5 = 25
+```
