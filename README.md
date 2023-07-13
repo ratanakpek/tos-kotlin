@@ -7,41 +7,40 @@ Inspired by [@dbacinski](http://twitter.com/dbacinski) (Dariusz Baciński) & Pho
 ## Table of Contents
 
 * [Creational Patterns](#creational)
-    * [Builder / Assembler](#builder--assembler)
-    * [Factory Method](#factory-method)
-    * [Singleton](#singleton)
-    * [Abstract Factory](#abstract-factory)
-    * [Prototype](#prototype)
-
-* [Behavioral Patterns](#behavioral)
-    * [Observer / Listener](#observer--listener)
-    * [Strategy](#strategy)
-    * [Command](#command)
-    * [State](#state)
-    * [Chain of Responsibility](#chain-of-responsibility)
-    * [Visitor](#visitor)
-    * [Mediator](#mediator)
-    * [Memento pattern](#memento)
-    * [Memento](#memento)
-    * [Iterator](#iterator)
+  1. [Singleton](#singleton)
+  2. [Factory Method](#factory-method)
+  3. [Abstract Factory](#abstract-factory)
+  4. [Builder / Assembler](#builder--assembler)
+  5. [Prototype](#prototype)
 
 * [Structural Patterns](#structural)
-    * [Adapter](#adapter)
-    * [Decorator](#decorator)
-    * [Facade](#facade)
-    * [Protection Proxy](#protection-proxy)
-    * [Composite](#composite)
-    * [Proxy Pattern](#proxy)
-    * [Flyweight Pattern](#flyweight)
+  1. [Adapter](#adapter)
+  2. [Decorator](#decorator)
+  3. [Facade](#facade)
+  4. [Composite](#composite)
+  5. [Proxy Pattern](#proxy)
+  6. [Flyweight Pattern](#flyweight)
+  7. [Protection Proxy](#protection-proxy)
+
+* [Behavioral Patterns](#behavioral)
+  1. [Command](#command)
+  2. [Observer / Listener](#observer--listener)
+  3. [State](#state)
+  4. [Mediator](#mediator)
+  5. [Memento pattern](#memento)
+  6. [Iterator](#iterator)
+  7. [Visitor](#visitor)
+  8. [Strategy](#strategy)
+  9. [Chain of Responsibility](#chain-of-responsibility)
 
 
 //////////////// DESIGN PATTERN //////////////////
 
-Creational Pattern:
+Creation Pattern:
 Define how we create object! It provide various object creation mechanisms, which increase
 flexibility and reuse of existing code.
 
-[Singleton](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
+1. [Singleton](app/src/main/java/com/example/designpatterninkotlinjava/creational/singleton/java/Coin.kt)
 ------------
 
 The singleton pattern ensures that only one object of a particular class is ever created. All
@@ -134,7 +133,7 @@ fun `Singleton with Java test`() {
 }
 ```
 
-[Factory Method](app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/FactoryMethodWithInterface.kt)
+2. [Factory Method](app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/FactoryMethodWithInterface.kt)
 ------------
 
 is an interface or abstract class for creating an object but let the subclasses decide which class
@@ -207,7 +206,7 @@ fun `Create object by method at runtime with interface`() {
 }
 ```
 
-[Abstract Factory](app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/FactoryMethodWithInterface.kt)
+3. [Abstract Factory](app/src/main/java/com/example/designpatterninkotlinjava/creational/factorymethod/FactoryMethodWithInterface.kt)
 ------------
 
 for solves the problem of creating entire product families without specifying their concrete
@@ -331,7 +330,7 @@ Mac os checkbox!
 Mac os button!
 ```
 
-[Builder / Assembler](app/src/main/java/com/example/designpatterninkotlinjava/creational/builder/kotlinstyle/SetupComputer.kt)
+4. [Builder / Assembler](app/src/main/java/com/example/designpatterninkotlinjava/creational/builder/kotlinstyle/SetupComputer.kt)
 ------------
 
 to provide a flexible solution to various object creation problems in object-oriented programming.
@@ -377,7 +376,7 @@ fun `Create builder pattern with kotlin coding style`() {
 }
 ```
 
-[Prototype](app/src/main/java/com/example/designpatterninkotlinjava/creational/prototype/OperatingSystem.kt)
+5. [Prototype](app/src/main/java/com/example/designpatterninkotlinjava/creational/prototype/OperatingSystem.kt)
 ------------
 
 allow you to copy existing objects without making your code dependent on their classes.
@@ -475,7 +474,7 @@ together to form larger structures. There are 2 types of structural pattern:
     - Object composition
     - Allow objects to change behavior at runtime ==========
 
-[Adapter](app/src/main/java/com/example/designpatterninkotlinjava/structural/Adapter.kt)
+6. [Adapter](app/src/main/java/com/example/designpatterninkotlinjava/structural/Adapter.kt)
 ------------
 
 It is a wrapper that allows incompatible objects to collaborate/connect each other.
@@ -554,7 +553,7 @@ fun `Square peg smaller or fit with hole success test`() {
 }
 ```
 
-[Decorator](app/src/main/java/com/example/designpatterninkotlinjava/structural/decorator/AndroidOSDecorator.kt)
+7. [Decorator](app/src/main/java/com/example/designpatterninkotlinjava/structural/decorator/AndroidOSDecorator.kt)
 ------------
 Act as a wrapper to existing or original class and provide additional functionality keeping class
 methods signature intact.
@@ -634,7 +633,7 @@ Running on OS: Oreo!
 This current OS embed with Color OS Security !
 ```
 
-[Facade](app/src/main/java/com/example/designpatterninkotlinjava/structural/ComputerFacade.kt)
+8. [Facade](app/src/main/java/com/example/designpatterninkotlinjava/structural/ComputerFacade.kt)
 ------------
 It hides the complexities of the system and provides an interface to the client using which the
 client can access the system.
@@ -714,7 +713,7 @@ fun `Client doesn't need to know all components, just call turnOnComputer() meth
 4.Running : CPU
 ```
 
-[Composite](app/src/main/java/com/example/designpatterninkotlinjava/structural/EmployeeComposite.kt)
+9. [Composite](app/src/main/java/com/example/designpatterninkotlinjava/structural/EmployeeComposite.kt)
 ------------
 is to treat a group of objects or single object in the same way in term of a tree structure to
 represent part as well as whole hierarchy.
@@ -796,7 +795,7 @@ Employee :[Name : Channa, dept : IOS Developer, salary :1000 ]
 Employee :[Name : Kdey, dept : IOS Developer, salary :1000 ]
 ```
 
-[Proxy Pattern](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProxyPattern.kt)
+10. [Proxy Pattern](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProxyPattern.kt)
 ------------
 It means an object representing another object, and provide the control for accessing the original
 object. Example: when we perform operations like validating the object, hiding the information of
@@ -845,7 +844,7 @@ Displaying my_vdo . mp4
 Displaying my_vdo . mp4
 ```
 
-[Flyweight Pattern](app/src/main/java/com/example/designpatterninkotlinjava/structural/FlyweightPattern.kt)
+11. [Flyweight Pattern](app/src/main/java/com/example/designpatterninkotlinjava/structural/FlyweightPattern.kt)
 ------------
 
 - To lower the number of objects generated, decrease the memory footprint, and improve performance.
@@ -896,7 +895,7 @@ Color: Black, X : 38, Y : 52
 ```
 
 
-[Protection Proxy](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProtectionProxy.kt)
+12. [Protection Proxy](app/src/main/java/com/example/designpatterninkotlinjava/structural/ProtectionProxy.kt)
 ------------
 is a class represents functionality of another class by require more information than original
 class. It can be a protection layer to original class or data.
@@ -962,7 +961,7 @@ Your info is invalid, please try again!
 Behavioral design patterns:
 are concerned with algorithms and the assignment of responsibilities between objects.
 
-[Command](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt)
+13. [Command](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Command.kt)
 ------------
 is wrapped under an object as command and passed to invoker object. Invoker object looks for the
 appropriate object which can handle this command and passes the command to the corresponding object
@@ -1037,7 +1036,7 @@ Movie : Avenger Ticket has been ordered!
 Movie : HunterGhost Ticket has been ordered!
 ```
 
-[Observer / Listener](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Observer.kt)
+14. [Observer / Listener](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/Observer.kt)
 ------------
 The pattern provide a subscription mechanism that notifies multiple objects about any changes that
 happen to the observed object. Kotlin has built-in like observable, vetoable. If we write this
@@ -1077,7 +1076,7 @@ Old = < Initialize value >, New = First Text
         Old = First Text, New = Second Text
 ```
 
-[State](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/kotlin/ActivityLifeCycle.kt)
+15. [State](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/kotlin/ActivityLifeCycle.kt)
 ------------
 It can create objects which represent various states and a context object whose behavior varies as
 its state object changes.
@@ -1164,7 +1163,7 @@ State : Destory
 resume: false
 ```
 
-[Mediator](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/mediator/Mediator.kt)
+16. [Mediator](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/mediator/Mediator.kt)
 ------------
 It helps us to design the system in such a way that components are loosely coupled and reusable.
 
@@ -1214,7 +1213,7 @@ Power on
         Display monitor
 ```
 
-[Memento pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
+17. [Memento pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
 ------------
 is used to restore state of an object to a previous state.
 
@@ -1275,14 +1274,78 @@ Second saved state: State #2
 First saved state: initial state
 ```
 
-[Iterator pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/memento/Memento.kt)
+18. [Iterator pattern](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/iterator/sample/StockIterator.kt)
 ------------
 Allow us to traverse the collection without worrying the structure of collection (list, stack, tree,
 etc.)
 
+#### Example:
 
+```kotlin
+public class StockIterator implements Iterator {
+    private int index;
+    private Inventory inventory;
 
-[Visitor](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/visitor.kt)
+    public StockIterator(Inventory inventory) {
+        this.inventory = inventory;
+        index = 0;
+    }
+
+    @Override
+    public boolean hasNext() {
+        Item[] items = inventory.getItems();
+        if (index < items.length) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public Item next() {
+        Item[] items = inventory.getItems();
+        if (hasNext()) {
+            Item item = items[index++];
+            if (item.getQuantity() > 0) {
+                return item;
+            } else {
+                return next();
+            }
+        } else {
+            return null;
+        }
+    }
+}
+```
+
+#### Usage:
+
+```kotlin
+ @Test
+fun iterator_test() {
+    val employeeList = listOf(
+        Employee("Dara Chan", 20),
+        Employee("Makara Pich", 14),
+        Employee("Pov Ponlok", 26)
+    )
+
+    val adminInfo = AdminInfo(employeeList.toMutableList())
+    val itDepartment = adminInfo.iterator()
+    while (itDepartment.hasNext()) {
+        val item = itDepartment.next()
+        println(item.name)
+    }
+}
+```
+
+#### Output
+
+```kotlin
+Dara Chan 
+Pov Ponlok
+```
+
+19. [Visitor](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/visitor.kt)
 ------------
 when we need to add similar extraneous functionality to many different classes.
 
@@ -1362,100 +1425,43 @@ Store data with SQL, as existing in our project !
 Store data as json !
 Store data in text file!
 ```
+20. [Strategy](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/visitor.kt)
+------------
+is about algorithm can be changed at run time.
 
-////////// END OF DESIGN PATTERN /////////////////////
-
-DELEGATION
-
-1. Delegation can replace inheritance:
-   Normally in Java, in order to follow single responsibility, we often use BaseClass to provide 2
-   classes has same responsibility. But in Kotlin, we don't need to create new utility base class,
-   we just create one interface and class implementation of that interface and use by keyword "by"
-   delegation and use it in any class.
-
-#### Example : Delegation can replace inheritance
+#### Example:
 
 ```kotlin
-interface DelegationMsg { // interface one
-    fun sendMsg(msg: String)
+interface Strategy {
+  fun doOperation(num1: Int, num2: Int): Int
+}
 
-    fun deleteMsg()
-
-    class DelegationImpl : DelegationMsg { // implementation of that interface
-        override fun sendMsg(msg: String) {
-            println(msg)
-        }
-
-        override fun deleteMsg() {
-            println("Delete!")
-        }
-    }
+class OperationAdd : Strategy {
+  override fun doOperation(num1: Int, num2: Int): Int {
+    return num1 + num2
+  }
 }
 ```
 
-2. Create custom delegation property for setter/getter :
-   In order to follow the single responsibility principle from SOLID, we can create a class to
-   handle the validation for setter/getter of field,
-
-* #### Example : Create custom delegation property for setter/getter
-
-```kotlin
-class NameDelegateValidation {
-    var formatValue: String? = null
-
-    //can remove code duplication
-    operator fun setValue(thisRef: Any?, properties: KProperty<*>, value: String?) {
-        if (value != null && value.length >= 3) {
-            formatValue = value.trim().toUpperCase()
-        }
-    }
-
-    //can remove code duplication
-    operator fun getValue(thisRef: Any?, properties: KProperty<*>): String? {
-        return formatValue
-    }
-}
-```
-
-```kotlin
-var type: String? by NameDelegateValidation()
-```
-
-3. Delegation property: There are few delegation properties like observable, vetoable, lazy...
-
-* #### Example : Observable Delegation -> detect the value changes of the field
-
-```kotlin
-class ObservableDelegation {
-    var myName: String by Delegates.observable("Kid") { _, old, new ->
-        println("Old=$old, new=$new")
-    }
-}
-```
+#### Usage:
 
 ```kotlin
  @Test
-fun `Demo observable function from Kotlin test`() {
-    val observableDelegation = ObservableDelegation()
-    observableDelegation.myName = "Hello World" //Old=Kid, new=Hello World
+fun `Creating strategy operation test`() {
+  val contextOperationAdd = Context(OperationAdd())
+  println("5 + 5 = ${contextOperationAdd.executeStrategy(5, 5)}")
 
-    observableDelegation.myName = "Saving & Investing" //Old=Hello World, new=Saving & Investing
+  val contextOperationSubtract = Context(OperationSubtract())
+  println("5 - 5 = ${contextOperationSubtract.executeStrategy(5, 5)}")
+
+  val contextOperationMultiply = Context(OperationMultiply())
+  println("5 * 5 = ${contextOperationMultiply.executeStrategy(5, 5)}")
 }
 ```
 
-* #### Example : Lazy Delegation -> help performance when creating the heavy object, and the object created only first time
-
+#### Output
 ```kotlin
-val heavyOperation by lazy {
-    HeavyOperation()
-}
-```
-
-* #### Example : 3. Vetoable Delegation -> It is like observable but the the changes of the field must be fullfill the condition.
-
-```kotlin
- var myAge by Delegates.vetoable(18) { _, old, new ->
-    println("Old=$old, new=$new")
-    new >= 18
-}
+5 + 5 = 10
+5 - 5 = 0
+5 * 5 = 25
 ```
