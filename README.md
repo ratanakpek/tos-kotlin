@@ -1465,3 +1465,61 @@ fun `Creating strategy operation test`() {
 5 - 5 = 0
 5 * 5 = 25
 ```
+
+20. [ChainOfResponsibilty](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/chainofresponsibilty/activation.kt)
+is a behavioral design pattern that we use to achieve loose coupling, where a request from the client is passed to a chain of objects to process them.
+
+#### Example:
+
+```kotlin
+abstract class ActivationContract {
+
+  protected var step = 1
+  var nextStep: ActivationContract? = null
+
+  fun doActivation(step: Int, msg: String) {
+    if (this.step <= step) {
+      performAction(msg)
+    }
+    nextStep?.doActivation(step, msg)
+  }
+
+  protected abstract fun performAction(msg: String?)
+
+  companion object {
+    var phoneNumberStep = 1
+    var enterAccountStep = 2
+    var loginStep = 3
+  }
+}
+```
+
+#### Usage:
+
+```kotlin
+//create chain of responsibility 
+
+fun createChaining(): ActivationContract {
+  val activationFlow1 = PhoneNumberStep(ActivationContract.phoneNumberStep)
+
+  val activationFlow2 = EnterAccountStep(ActivationContract.enterAccountStep)
+  activationFlow1.nextStep = activationFlow2
+
+  val activationFlow3 = LoginStep(ActivationContract.loginStep)
+  activationFlow2.nextStep = activationFlow3
+  return activationFlow1
+}
+
+
+@Test
+fun do_chain_responsibility_test() {
+  val chaining = createChaining()
+  chaining.doActivation(ActivationContract.enterAccountStep, "Hello Login")
+}
+```
+
+#### Output
+```kotlin
+PhoneNumberStep : 1
+EnterAccountStep : 2
+```

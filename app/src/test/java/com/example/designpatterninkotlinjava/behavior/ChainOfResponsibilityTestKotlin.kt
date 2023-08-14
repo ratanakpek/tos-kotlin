@@ -16,13 +16,12 @@ class ChainOfResponsibilityTestKotlin {
 
         val activationFlow3 = LoginStep(ActivationContract.loginStep)
         activationFlow2.nextStep = activationFlow3
-
-        return activationFlow1;
+        return activationFlow1
     }
 
     @Test
     fun do_chain_responsibility_test() {
         val chaining = createChaining()
-        chaining.doActivation(ActivationContract.loginStep, "Hello Login")
+        chaining.doActivation(ActivationContract.enterAccountStep, "Hello Login")
     }
 }
