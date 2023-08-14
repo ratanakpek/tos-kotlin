@@ -1472,24 +1472,33 @@ is a behavioral design pattern that we use to achieve loose coupling, where a re
 #### Example:
 
 ```kotlin
-abstract class ActivationContract {
+abstract class ActivationFlow {
+  @JvmField
+  protected var activationFlow: ActivationFlow? = null
 
-  protected var step = 1
-  var nextStep: ActivationContract? = null
-
-  fun doActivation(step: Int, msg: String) {
-    if (this.step <= step) {
-      performAction(msg)
-    }
-    nextStep?.doActivation(step, msg)
+  fun setActivationFlow(activationFlow: ActivationFlow) {
+    this.activationFlow = activationFlow
   }
 
-  protected abstract fun performAction(msg: String?)
+  abstract fun nextStep(user: User): String
+}
 
-  companion object {
-    var phoneNumberStep = 1
-    var enterAccountStep = 2
-    var loginStep = 3
+
+class User {
+  var accountNumber: String = ""
+  var phoneNumber: String = ""
+  var pin: String = ""
+  var language: String = ""
+}
+
+class SplashScreen1 : ActivationFlow() {
+  override fun nextStep(user: User): String {
+    println("Step: 1")
+    return if (user.accountNumber.isEmpty() && user.phoneNumber.isEmpty()) {
+      "Invalid user!"
+    } else {
+      activationFlow?.nextStep(user).orEmpty()
+    }
   }
 }
 ```
@@ -1497,29 +1506,37 @@ abstract class ActivationContract {
 #### Usage:
 
 ```kotlin
-//create chain of responsibility 
-
-fun createChaining(): ActivationContract {
-  val activationFlow1 = PhoneNumberStep(ActivationContract.phoneNumberStep)
-
-  val activationFlow2 = EnterAccountStep(ActivationContract.enterAccountStep)
-  activationFlow1.nextStep = activationFlow2
-
-  val activationFlow3 = LoginStep(ActivationContract.loginStep)
-  activationFlow2.nextStep = activationFlow3
-  return activationFlow1
-}
-
-
 @Test
-fun do_chain_responsibility_test() {
-  val chaining = createChaining()
-  chaining.doActivation(ActivationContract.enterAccountStep, "Hello Login")
+fun `Activation on app test`() {
+  //Application step
+  val step1 = SplashScreen1()
+  val step2 = ChooseLanguage2()
+  val step3 = EnterAccountNumber3()
+  val step4 = EnterPincode4()
+  val finalStep = WelcomeScreen5()
+
+  //chain
+  step1.setActivationFlow(step2)
+  step2.setActivationFlow(step3)
+  step3.setActivationFlow(step4)
+  step4.setActivationFlow(finalStep)
+
+  //if user not enter valid information,
+  //so user will not able to reach final step
+  val user = User()
+  user.accountNumber = "010555213"
+  user.language = "EN"
+  user.pin = "1234"
+
+  println(step1.nextStep(user))
 }
 ```
 
 #### Output
 ```kotlin
-PhoneNumberStep : 1
-EnterAccountStep : 2
+Step: 1
+Step: 2
+Step: 3
+Step: 4
+Congratulation!
 ```
