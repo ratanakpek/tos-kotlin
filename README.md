@@ -1465,3 +1465,78 @@ fun `Creating strategy operation test`() {
 5 - 5 = 0
 5 * 5 = 25
 ```
+
+20. [ChainOfResponsibilty](app/src/main/java/com/example/designpatterninkotlinjava/behavioral/chainofresponsibilty/activation.kt)
+is a behavioral design pattern that we use to achieve loose coupling, where a request from the client is passed to a chain of objects to process them.
+
+#### Example:
+
+```kotlin
+abstract class ActivationFlow {
+  @JvmField
+  protected var activationFlow: ActivationFlow? = null
+
+  fun setActivationFlow(activationFlow: ActivationFlow) {
+    this.activationFlow = activationFlow
+  }
+
+  abstract fun nextStep(user: User): String
+}
+
+
+class User {
+  var accountNumber: String = ""
+  var phoneNumber: String = ""
+  var pin: String = ""
+  var language: String = ""
+}
+
+class SplashScreen1 : ActivationFlow() {
+  override fun nextStep(user: User): String {
+    println("Step: 1")
+    return if (user.accountNumber.isEmpty() && user.phoneNumber.isEmpty()) {
+      "Invalid user!"
+    } else {
+      activationFlow?.nextStep(user).orEmpty()
+    }
+  }
+}
+```
+
+#### Usage:
+
+```kotlin
+@Test
+fun `Activation on app test`() {
+  //Application step
+  val step1 = SplashScreen1()
+  val step2 = ChooseLanguage2()
+  val step3 = EnterAccountNumber3()
+  val step4 = EnterPincode4()
+  val finalStep = WelcomeScreen5()
+
+  //chain
+  step1.setActivationFlow(step2)
+  step2.setActivationFlow(step3)
+  step3.setActivationFlow(step4)
+  step4.setActivationFlow(finalStep)
+
+  //if user not enter valid information,
+  //so user will not able to reach final step
+  val user = User()
+  user.accountNumber = "010555213"
+  user.language = "EN"
+  user.pin = "1234"
+
+  println(step1.nextStep(user))
+}
+```
+
+#### Output
+```kotlin
+Step: 1
+Step: 2
+Step: 3
+Step: 4
+Congratulation!
+```
